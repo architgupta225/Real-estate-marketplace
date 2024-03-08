@@ -110,7 +110,7 @@ export default function CreateListing() {
         ...formData,
         [e.target.id]: e.target.checked,
       });
-    }
+    } 
 
     if (
       e.target.type === 'number' ||
