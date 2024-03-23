@@ -19,7 +19,7 @@ export default function Search() {
 
   useEffect(() => {
     const urlParams = new URLSearchParams(location.search);
-    const searchTermFromUrl = urlParams.get("serachTerm");
+    const searchTermFromUrl = urlParams.get("searchTerm");
     const typeFromUrl = urlParams.get("type");
     const parkingFromUrl = urlParams.get("parking");
     const furnishedFromUrl = urlParams.get("furnsihed");
@@ -94,7 +94,7 @@ export default function Search() {
   const handleSubmit = (e) => {
     e.preventDefault();
     const urlParams = new URLSearchParams();
-    urlParams.set("serachTerm", sidebarData.searchTerm);
+    urlParams.set("searchTerm", sidebarData.searchTerm);
     urlParams.set("type", sidebarData.type);
     urlParams.set("parking", sidebarData.parking);
     urlParams.set("furnsihed", sidebarData.furnished);
@@ -102,7 +102,7 @@ export default function Search() {
     urlParams.set("sort", sidebarData.sort);
     urlParams.set("order", sidebarData.order);
     const searchQuery = urlParams.toString();
-    navigate(`/serach?${searchQuery}`);
+    navigate(`/search?${searchQuery}`);
   };
 
   return (
