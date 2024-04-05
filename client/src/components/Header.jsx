@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 
 export default function Header() {
   const { currentUser } = useSelector((state) => state.user);
-  const [searchTerm, setSerachTerm] = useState("");
+  const [searchTerm, setSearchTerm] = useState("");
 
   const navigate = useNavigate();
 
@@ -21,7 +21,7 @@ export default function Header() {
     const urlParams = new URLSearchParams(window.location.search);
     const searchTermFromUrl = urlParams.get("searchTerm");
     if (searchTermFromUrl) {
-      setSerachTerm(searchTermFromUrl);
+      setSearchTerm(searchTermFromUrl);
     }
   }, [location.search]);
 
@@ -43,7 +43,7 @@ export default function Header() {
             placeholder="Search.."
             className="bg-transparent focus:outline-none w-24 sm:w-64"
             value={searchTerm}
-            onChange={(e) => setSerachTerm(e.target.value)}
+            onChange={(e) => setSearchTerm(e.target.value)}
           />
           <button>
             <FaSearch className="text-slate-600" />
